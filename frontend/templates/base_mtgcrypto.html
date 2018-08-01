@@ -8,8 +8,9 @@
 
 {% block header %}
 <div class="header">
+<div><input type="text" placeholder="search" class="cardsearch" /></div>
 {% if user.username %} 
-<div><input type="text" placeholder="search" class="cardsearch" /></div><nav>
+<nav>
   <a href="{% url 'profile' %}">My Profile</a> | <a href="{% url 'catalog' %}">Browse Catalog</a>
 </nav>
   <a href="{% url 'logout' %}?next=/"><button class="register">Log Out</button></a>
