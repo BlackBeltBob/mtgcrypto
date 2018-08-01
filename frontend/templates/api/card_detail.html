@@ -37,12 +37,17 @@
 {% endif %}
       <tr><td>{{ offer.user.username }}</td><td>
 {% if offer.quality == 1 %}Mint
-{% elif offer.quality == 2 %}Near-Mint
-{% elif offer.quality == 3 %}Excellent
-{% elif offer.quality == 4 %}Good
-{% elif offer.quality == 5 %}Light-played
-{% elif offer.quality == 6 %}Played
-{% elif offer.quality == 7 %}Poor
+{$ else $}
+<div class="tooltip">
+  {% if offer.quality == 2 %}Near-Mint
+  {% elif offer.quality == 3 %}Excellent
+  {% elif offer.quality == 4 %}Good
+  {% elif offer.quality == 5 %}Light-played
+  {% elif offer.quality == 6 %}Played
+  {% elif offer.quality == 7 %}Poor
+  {% endif %}
+  <span class="tooltiptext">{{offer.content}}</span>
+</div>
 {% endif %}
 </td><td>{{ offer.amount }}</td><td class="fixed_width">{{ offer.price }}</td></tr>
 {% if forloop.last %}
