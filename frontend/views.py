@@ -2,6 +2,7 @@ from api.models import MTGSet, Card, Offer, MTGCryptoUser
 from django.shortcuts import render
 from django.views.generic import TemplateView, FormView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from api.choices import *
 
 import djfractions
 
@@ -72,6 +73,9 @@ class CardView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         offers = Offer.objects.filter(card=self.object.pk)
+
+        for offer in offers:
+            offer.quality = OFFER_QUALITY_CHOICES[offer.quality][1]
         context['offers'] = offers
         return context
 

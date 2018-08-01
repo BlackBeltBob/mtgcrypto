@@ -8,7 +8,7 @@
     <img src="https://magiccards.info/scans/en/{{object.mtgset.code}}/{{object.number}}.jpg" alt="{{ object.name }}"/>
     <h1>{{ object.name }}</h1>
     <table><tbody>
-      <tr><th>type:</th><td>{{ object.type }}</td></tr>
+      <tr><th>Type:</th><td>{{ object.type }}</td></tr>
 {% if object.loyalty != None %}
       <tr><th>Loyalty:</th><td>{{ object.loyalty }}</td></tr>
 {% endif %}
@@ -36,15 +36,8 @@
     </thead>
 {% endif %}
       <tr><td>{{ offer.user.username }}</td><td>
-        <div class="tooltip">
-  {% if offer.quality == 1 %}Mint
-  {% elif offer.quality == 2 %}Near-Mint
-  {% elif offer.quality == 3 %}Excellent
-  {% elif offer.quality == 4 %}Good
-  {% elif offer.quality == 5 %}Light-played
-  {% elif offer.quality == 6 %}Played
-  {% elif offer.quality == 7 %}Poor
-  {% endif %}<span class="tooltiptext">{{offer.content}}</span></div></td><td>{{ offer.amount }}</td><td class="fixed_width">{{ offer.price }}</td></tr>
+        <div class="tooltip">{{ offer.quality|title }}
+{% if offer.comment != None %}<span class="tooltiptext">{{offer.comment}}</span>{% endif %}</div></td><td>{{ offer.amount }}</td><td class="fixed_width">{{ offer.price }}</td></tr>
 {% if forloop.last %}
     </table>
 {% endif %}
