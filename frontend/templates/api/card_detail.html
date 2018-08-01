@@ -44,10 +44,7 @@
   {% elif offer.quality == 5 %}Light-played
   {% elif offer.quality == 6 %}Played
   {% elif offer.quality == 7 %}Poor
-  {% endif %}<span class="tooltiptext">{{offer.content}}</span>
-</div>
-{% endif %}
-</td><td>{{ offer.amount }}</td><td class="fixed_width">{{ offer.price }}</td></tr>
+  {% endif %}<span class="tooltiptext">{{offer.content}}</span></div></td><td>{{ offer.amount }}</td><td class="fixed_width">{{ offer.price }}</td></tr>
 {% if forloop.last %}
     </table>
 {% endif %}
