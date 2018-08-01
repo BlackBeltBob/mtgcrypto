@@ -1,0 +1,17 @@
+{% extends "base_mtgcrypto.html" %}
+
+{% block articlecontent %}
+<div class="site_section">
+  <div class="container">
+    <h1>Your Profile</h1>
+    <p>Welcome to your profile. Please select an option from the list below:</p>
+    <ul>
+      <li><a href="{% url 'catalog' %}">Catalog</a></li>
+      <li>Most recent offers</li>
+      <li>Most valuable offers</li>
+      <li>Recommended offers</li>
+      <li><a href="{% url 'settings' %}">Settings</a></li>
+    </ul>
+  </div>
+</div>
+{% endblock %}

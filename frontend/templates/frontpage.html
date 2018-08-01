@@ -1,0 +1,44 @@
+{% extends "base_mtgcrypto.html" %}
+
+{% block articlecontent %}
+<div class="frontpage">
+<div class="site_section banner">
+  <div class="container">
+    <h1>Trading Between Collectibles</h1>
+    <p>MTGCrypto is a work-in-progress marketplace for peer-to-peer trading of Magic: the Gathering trading cards. Build a collection while distributing bitcoin, or sell that cardboard crack for those magical internet monies.</p>
+  </div>
+</div>
+<div class="site_section site_section_light">
+  <div class="container">
+    <h2>Oh look, another pucatrade/cardsphere..</h2>
+    <div class="grid">
+      <div class="grid-cell">
+        <h3>No tokens</h3>
+        <p>Not quite. Pucatrade and cardsphere have both tried to solve the problem of trading between multiple currencies and countries via their own point system (puca points), or just using US dollars. The main difficulty is conversion to and from thoses systems.</p>
+      </div>
+      <div class="grid-cell">
+        <h3>Just an arbiter</h3>
+        <p>We can't move anyone's funds without *your* authorization. When you want to sell a card, you create an offering. Another user takes up that offer, and sends funds to a 2-3 multisig address. Each of you can provide a signature, and MTGCrypto only acts as an arbiter when either party is unwilling to finalize the deal after shipping.</p>
+      </div>
+      <div class="grid-cell">
+        <h3>Discounted trade offers to specific users</h3>
+        <p>Have friends you want to send cards to? Don't want to charge full price? You can easily discount an open offer to specific users on the site.</p>
+      </div>
+      <div class="grid-cell">
+        <h3>Arbitration</h3>
+        <p>MTGCrypto only steps in when a case is opened. Minimizing trust is what we're all about.</p>
+      </div>
+    </div>
+  </div>
+</div> 
+<div class="site_section">
+  <div class="container">
+  <ul>
+    <li><strong>MTG Sets:</strong> {{ num_sets }}</li>
+    <li><strong>Cards:</strong> {{ num_cards }}</li>
+    <li><strong>Offers:</strong> {{ num_open_offers }}</li>
+  </ul>
+  </div>
+</div>
+</div>
+{% endblock %}

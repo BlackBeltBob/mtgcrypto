@@ -1,0 +1,58 @@
+{% extends 'base_mtgcrypto.html' %}
+{% load fractions %}
+
+{% block articlecontent %}
+<div class="card_showcase">
+<div class="site_section">
+  <div class="container" style="min-height: 450px;">
+    <img src="https://magiccards.info/scans/en/{{object.mtgset.code}}/{{object.number}}.jpg" alt="{{ object.name }}"/>
+    <h1>{{ object.name }}</h1>
+    <table><tbody>
+      <tr><th>type:</th><td>{{ object.type }}</td></tr>
+{% if object.loyalty != None %}
+      <tr><th>Loyalty:</th><td>{{ object.loyalty }}</td></tr>
+{% endif %}
+{% if object.power != "" %}
+      <tr><th>P/T:</th><td>{{ object.power }}/{{ object.toughness }}</td></tr>
+{% endif %}
+      <tr><th>CMC:</th><td>{% display_fraction object.cmc %}</td></tr>
+      <tr><th>Artist:</th><td>{{ object.artist }}</td></tr>
+      <tr><th>Number:</th><td>{{ object.number }}</td></tr>
+      <tr><th>Reference:</th><td>
+<a href="https://magiccards.info/{{object.mtgset.code}}/en/{{object.number}}" target="_blank" class="external">magiccards.info</a>
+<a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid={{ object.multiverse_id }}" target="_blank" class="external">Gatherer</a>
+</td></tr>
+    </tbody></table>
+    <h2>Open Offers</h2>
+{% if offers == None %}
+    <p>Nobody is currently offering this card.</p>
+{% else %}
+    <p>List of open offers for this card:</p>
+{% for offer in offers %}
+{% if forloop.first %}
+    <table>
+    <thead>
+      <tr><th>Username</th><th>Quality</th><th>Quantity</th><th>Price</th></tr>
+    </thead>
+{% endif %}
+      <tr><td>{{ offer.user.username }}</td><td>
+{% if offer.quality == 1 %}Mint
+{% elif offer.quality == 2 %}Near-Mint
+{% elif offer.quality == 3 %}Excellent
+{% elif offer.quality == 4 %}Good
+{% elif offer.quality == 5 %}Light-played
+{% elif offer.quality == 6 %}Played
+{% elif offer.quality == 7 %}Poor
+{% endif %}
+</td><td>{{ offer.amount }}</td><td class="fixed_width">{{ offer.price }}</td></tr>
+{% if forloop.last %}
+    </table>
+{% endif %}
+
+{% endfor %}
+{% endif %}
+
+  </div>
+</div>
+</div>
+{% endblock %}

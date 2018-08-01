@@ -1,0 +1,55 @@
+{% extends 'base_mtgcrypto.html' %}
+
+
+
+{% block articlecontent%}
+<div class="catalog">
+<div class="site_section">
+  <div class="container">
+    <h1>Card Catalog</h1>
+    <p>Select a set, then see what cards are offered.</p>
+
+{% if set_selection %}
+{{ set_selection }}
+Cards in set:
+{% with mythic="Mythic Rare" rare="Rare" uncommon="Uncommon" common="Common" special="Special" basic="Basic Land" %}
+{% for card in cards %}
+  {% if forloop.first %}
+<div style="overflow-x:auto;"><table>
+  <thead>
+  <tr><th>English Name</th><th>Rarity</th><th>Number</th></tr>
+  </thead>
+  {% endif %}
+<tr><td><a href="{% url 'card' pk=card.id %}">{{card.name}}</a></td><td>{% if card.rarity == 1 %}
+{{mythic}}
+{% elif card.rarity == 2 %}
+{{rare}}
+{% else %}
+{{uncommon}}
+{%endif %}</td><td>{{card.number}}</td></tr>
+  {% if forloop.last %}
+</table></div>
+  {% endif %}
+{% endfor %}
+{% endwith %}
+
+{% else %}
+  {% for mtg_set in mtg_sets %}
+    {% if forloop.first %}
+<div style="overflow-x:auto;"><table>
+  <thead>
+  <tr><th>Code</th><th>Name</th><th>Release Date</th></tr>
+  </thead>
+  <tbody>
+    {% endif %}
+<tr><td><a href="{% url 'catalog' %}{{ mtg_set.code}}">{{ mtg_set.code }}</a></td><td>{{ mtg_set.name }}</td><td>{{ mtg_set.release_date }}</td></tr>
+    {% if forloop.last %}
+  </tbody>
+</table></div>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+  </div>
+</div>
+</div>
+{% endblock %}

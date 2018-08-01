@@ -1,0 +1,190 @@
+html {
+    line-height: 1.15;
+    font: 17px/1.4 'Open Sans',sans-serif;
+}
+
+
+
+body {
+    margin: 0;
+    background-color: #2f3135;
+    background-image: url(data:image/png;base64,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)
+}
+
+
+
+input, .register {
+    font-size: 0.7em;
+    padding: 0.3em 2em;
+    border-radius: 3px;
+    border: solid 1px #333;
+}
+
+.register {
+    background-color: #e66;
+    border-color: #f9f9f9;
+}
+
+
+table {
+    border-collapse: collapse;
+}
+
+
+th, td {
+    padding: 0.5em 3.5em 0.5em 1em;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc
+}
+
+
+td.fixed_width {
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+}
+
+th {
+    color: white;
+    background-color: #117611;
+}
+
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+tr:hover {
+    background-color: #e9e9f2;
+}
+
+
+
+
+.header {
+    color: #eee;
+    margin: 1em;
+    text-align: right;
+}
+
+.header > * {
+    display: inline;
+}
+
+.header input {
+    margin: 0em 1em;
+}
+
+.cardsearch {
+    font-size: 1em;
+    padding: 0.4em 1em;
+    width: 20em;
+}
+
+
+.header nav {
+    background-color: #ccc;
+    margin: -0.5em 1em;
+    padding: 0.5em;
+    border-radius: 3px;    
+}
+
+
+
+footer {
+    text-align: center;  
+    padding: 4em 0;
+}
+
+div:not(.header) p {
+    margin: 0 0 2em;
+}
+
+
+.site_section {
+    background-color: #f9f9f9;
+    color: #333;
+    overflow: hidden;
+    padding: 2em 0 6em;
+}
+
+
+
+.site_section_light {
+    background-color: transparent;
+    color: #f9f9f9;
+}
+
+
+
+.container {
+    margin: 0 auto;
+    max-width: 760px;
+    padding: 0 10px;
+    position: relative;
+}
+
+
+.card_showcase .container img {
+    position: absolute;
+    left: -350px;
+    top: 0px;
+    width: 312px;
+    height: 445px;
+}
+
+.frontpage .container {
+    text-align: center;
+}
+
+.grid {
+    margin: 0 -15px;
+    letter-spacing: -.31em;
+    word-spacing: -.43em;
+    text-rendering: optimizespeed;
+}
+
+.grid-cell {
+    display: inline-block;
+    letter-spacing: normal;
+    text-align: left;
+    text-rendering: auto;
+    vertical-align: top;
+    width: 50%;
+    word-spacing: normal;
+}
+
+.grid-cell>* {
+    padding: 0 15px;
+}
+
+.helptext {
+    font-size: 0.8em;
+}
+
+
+
+
+.banner {
+    min-height: 300px;
+    background: url('/static/img/banner.jpg');
+}
+
+.banner p, .banner h1 {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 1em;
+}
+
+footer p, footer a {
+    color: #eee;
+    font-size: 0.7em;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+

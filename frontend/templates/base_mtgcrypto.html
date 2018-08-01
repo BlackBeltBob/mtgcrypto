@@ -1,0 +1,46 @@
+{% extends "base_generic.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/static/css/styles.css">
+{% endblock %}
+
+{% block content %}
+
+{% block header %}
+<div class="header">
+{% if user.username %} 
+<div><input type="text" placeholder="search" class="cardsearch" /></div><nav>
+  <a href="{% url 'profile' %}">My Profile</a> | <a href="{% url 'catalog' %}">Browse Catalog</a>
+</nav>
+  <a href="{% url 'logout' %}?next=/"><button class="register">Log Out</button></a>
+{% else %}
+<form method="POST" action="{% url 'login' %}">
+  <input class="input_group_input" type="text" placeholder="username" name="username" value="{{ current_name }}" />
+  <input type="password" placeholder="password" name="password" />
+  <input type="submit" value="Login">
+  {% csrf_token %}
+</form>
+  <a href="/accounts/register"><button class="register">Register</button></a>
+{% endif %}
+</div>
+
+{% endblock %}
+
+{% block articlecontent %}
+
+{% endblock %}
+
+{% block footer %}
+<footer>
+  <nav>
+    <a href="{% url 'about' %}">About</a>
+    <a href="{% url 'shipping' %}">Shipping Etiquette</a>
+    <a href="{% url 'conditionX' %}">Card Condition</a>
+  </nav>
+  <p>Magic: The Gathering is a Trademark of Wizards of the Coast, Inc. / Hasbro, Inc. This site is not affiliated.</p>
+  <p>Articles and comments are user-submitted and do not represent official endorsements by MTGCrypto.</p>
+  <p>Terms of Use | Privacy Statement | DMCA Requests | MTGCrypto 2018 | v1</p>
+</footer>
+{% endblock %}
+
+{% endblock %}

@@ -1,0 +1,15 @@
+Thank you for signing up with MTGCrypto. Your account is almost ready to be used, we just need you to activate it.
+
+Username: {{user}}
+
+You have {{expiration_days}} left to activate your account.
+
+Please click the following link:
+
+{{site}}/accounts/activate/{{ activation_key }}/
+
+We hope to see you soon!
+
+
+MTGCrypto
+

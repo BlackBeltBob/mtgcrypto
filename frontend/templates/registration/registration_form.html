@@ -1,0 +1,18 @@
+{% extends '../base_mtgcrypto.html' %}
+
+{% block header %}{% endblock %}
+
+{% block articlecontent %}
+
+<div class="site_section site_section_light">
+  <div class="container">
+<form method="POST">
+<table>
+{{ form }}
+{% csrf_token %}
+<tr><th>  </th><td><input type="submit" name="submit" value="Register"></td></tr>
+</table>
+</form>
+</div>
+</div>
+{% endblock%}
